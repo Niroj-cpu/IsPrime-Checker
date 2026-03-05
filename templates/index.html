@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Number Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Prime Number Checker 🔢</h1>
+
+    <div class="chatbox">
+        <div class="bot-message">
+            Enter a number and I’ll tell you if it’s prime.
+        </div>
+
+        {% if result %}
+        <div class="bot-message">
+            {{ result }}
+        </div>
+        {% endif %}
+    </div>
+
+    <form method="POST">
+        <input type="number" name="number" placeholder="Enter a number..." required>
+        <button type="submit">Check</button>
+    </form>
+
+</div>
+
+</body>
+</html>
